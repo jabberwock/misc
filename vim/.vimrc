@@ -10,6 +10,12 @@ augroup Binary
     au BufWritePost *.bin set nomod | endif
 augroup END
 
+" switch to hex editing mode
+nnoremap ^[x :%!xxd<CR>
+
+" strip trailing whitespace on save
+autocmd BufWritePre *.* :%s/\s\+$//e
+
 set nocompatible
 
 set autoindent
